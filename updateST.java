@@ -29,7 +29,7 @@ public class updateST {
     }
 
     public static int getQueryUtil(int i,int si,int sj,int qi,int qj){
-        if(qi>=sj || si>=qj){ //no overlap
+        if(qi>sj || si>qj){ //no overlap
             return 0;
         }
         else if(qi<=si && sj<=qj ){ //full overlap or complete overlap

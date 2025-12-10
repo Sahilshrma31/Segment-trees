@@ -15,9 +15,8 @@ public class QueryOnST{
         }
 
         int mid = (start + end) / 2;
-        // Left child -> 2*sti + 1 , range [start, mid]
+
         int l = BuildST(arr, 2 * sti + 1, start, mid);
-        // Right child -> 2*sti + 2 , range [mid+1, end]
         int r = BuildST(arr, 2 * sti + 2, mid + 1, end);
 
         // Internal node stores sum of left and right segments
@@ -30,7 +29,7 @@ public class QueryOnST{
     }
 
     public static int getQueryUtil(int i,int si,int sj,int qi,int qj){
-        if(qi>=sj || si>=qj){ //no overlap
+        if(qi>sj || si>qj){ //no overlap
             return 0;
         }
         else if(qi<=si && sj<=qj ){ //full overlap or complete overlap
